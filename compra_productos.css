@@ -1,0 +1,65 @@
+/* Agrega los estilos que desees para mejorar la apariencia de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.header {
+    background-color: #212529;
+    color: #fff;
+    padding: 20px;
+}
+
+.navbar-title {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+}
+
+.main {
+    padding: 20px;
+}
+
+.product-list {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #212529;
+    color: #fff;
+}
+
+.btn-cotizar, .btn-comprar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-comprar {
+    background-color: #28a745;
+}
+
+.footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}

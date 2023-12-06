@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inventario de Escaneos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='inventario.css') }}">
+</head>
+
+<body>
+    <h1>Inventario de Escaneos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre de PC</th>
+                <th>Sistema Operativo</th>
+                <th>Versión del S.O</th>
+                <th>Procesador</th>
+                <th>Total de Nucleos</th>
+                <th>Memoria Total</th>
+                <th>Disco Total</th>
+                <th>Ubicacion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[10] }} GB</td>
+                <td>{{ row[14] }} GB</td>
+                <td>{{Ubicacion}}</td>
+                <td><a href="/eliminar_pc/{{ row[0] }}">Eliminar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <form action="{{ url_for('escanear') }}" method="post">
+        <input type="submit" value="Volver">
+    </form>
+    <form action="{{ url_for('exportar_xlsx') }}" method="get">
+        <input type="submit" value="Exportar a XLSX">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes y Análisis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='informes.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Informes y Análisis</h1>
+    </header>
+
+    <section class="metricas">
+        <h2>Métricas Importantes</h2>
+        <p>Total Ventas: ${{ total_ventas }}</p>
+        <p>Ingreso Promedio por Venta: ${{ ingreso_promedio_por_venta }}</p>
+        <p>Productos Más Vendidos: {{ productos_mas_vendidos | join(', ') }}</p>
+        <p>Inventario Actual: {{ inventario_actual }}</p>
+        <p>Productos Más Populares: {{ productos_mas_populares | join(', ') }}</p>
+        <p>Margen de Beneficio: ${{ margen_beneficio }}</p>
+        <p>Comparación Ingresos/Gastos: Ingresos - Gastos = ${{ comparacion_ingresos_gastos["Ingresos"] - comparacion_ingresos_gastos["Gastos"] }}</p>
+        <p>Flujo de Efectivo: ${{ flujo_efectivo }}</p>
+    </section>
+
+    <section class="datos">
+        <h2>Datos de Ventas</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+            {% for venta in datos_ventas %}
+            <tr>
+                <td>{{ venta["id"] }}</td>
+                <td>{{ venta["producto"] }}</td>
+                <td>{{ venta["cantidad"] }}</td>
+                <td>${{ venta["total"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+    <section class="datos">
+        <h2>Datos de Productos</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Precio Unitario</th>
+            </tr>
+            {% for producto in datos_productos %}
+            <tr>
+                <td>{{ producto["id"] }}</td>
+                <td>{{ producto["nombre"] }}</td>
+                <td>{{ producto["stock"] }}</td>
+                <td>${{ producto["precio_unitario"] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+
+</body>
+
+</html>

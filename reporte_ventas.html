@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reporte de Ventas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='reporte_ventas.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header-title">Reporte de Ventas</h1>
+    </header>
+    <main class="main">
+        <table class="ventas-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venta in datos_ventas %}
+                <tr>
+                    <td>{{ venta.id }}</td>
+                    <td>{{ venta.producto }}</td>
+                    <td>{{ venta.cantidad }}</td>
+                    <td>{{ venta.total }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="totales">
+            <p>Total Neto: {{ total_neto }}</p>
+            <p>Impuestos (16%): {{ impuestos }}</p>
+            <p>Total Final: {{ total_final }}</p>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 Sistema de Inventarios</p>
+    </footer>
+</body>
+
+</html>

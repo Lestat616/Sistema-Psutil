@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización de Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cotizar.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1 class="navbar-title">Cotización de Producto</h1>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="product-details">
+            <h2>Detalles del Producto</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                </tr>
+                <!-- Aquí puedes agregar detalles específicos del producto -->
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="cotizacion-form">
+            <h2>Generar Cotización</h2>
+            <form method="post" action="{{ url_for('cotizar', producto_id=producto.id) }}">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+                <button type="submit" class="btn-generar-cotizacion">Generar Cotización</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 Sistema de Inventarios</p>
+    </footer>
+</body>
+</html>

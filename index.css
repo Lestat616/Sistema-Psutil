@@ -1,0 +1,143 @@
+/* Estilos para el body */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: #212529;
+    color: #fff;
+    padding: 20px;
+}
+
+/* Estilos para la marca de la barra de navegación */
+.navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Estilos para el título de la barra de navegación */
+.navbar-title {
+    color: #fff;
+    font-size: 32px;
+    margin: 0;
+}
+
+/* Estilos para el contenido principal */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 140px);
+}
+
+/* Estilos para el botón de escaneo */
+.scan-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 50px #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bold;
+    height: 250px;
+    margin-top: 20px;
+    margin-right: 20px;
+    transition: background-color 0.3s ease;
+    width: 250px;
+}
+
+/* Estilos para el botón de escaneo al pasar el cursor por encima */
+.scan-button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el botón de escaneo al hacer clic */
+.scan-button:active {
+    background-color: #003c80;
+}
+
+/* Estilos para el botón COMPRA PRODUCTOS */
+.purchase-button {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para el botón COMPRA PRODUCTOS al pasar el cursor por encima */
+.purchase-button:hover {
+    background-color: #e0a800;
+}
+
+/* Estilos para el botón COMPRA PRODUCTOS al hacer clic */
+.purchase-button:active {
+    background-color: #c79100;
+}
+
+/* Estilos para el botón de Reporte de Ventas */
+.reporte-ventas-button {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #0f0f0f;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Estilos para el botón de Reporte de Ventas al pasar el cursor por encima */
+.reporte-ventas-button:hover {
+    background-color: #e0a800;
+}
+
+/* Estilos para el botón de Reporte de Ventas al hacer clic */
+.reporte-ventas-button:active {
+    background-color: #c79100;
+}
+
+/* Estilos para el botón de informes */
+.informes-button {
+    background-color: #ffc107;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.informes-button:hover {
+    background-color: #e0a800; /* Cambia el color al pasar el cursor */
+}
+
+.informes-button:active {
+    background-color: #e0a800; /* Cambia el color al hacer clic */
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #212529;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para el texto del footer */
+.footer-text {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}

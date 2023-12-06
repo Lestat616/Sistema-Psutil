@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Producto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='comprar.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1 class="navbar-title">Compra de Producto</h1>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="product-details">
+            <h2>Detalles del Producto</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                </tr>
+                <!-- Aquí puedes agregar detalles específicos del producto -->
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="compra-form">
+            <h2>Proceso de Compra</h2>
+            <form method="post" action="{{ url_for('comprar', producto_id=producto.id) }}">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="direccion">Dirección de Envío:</label>
+                <input type="text" id="direccion" name="direccion" required>
+                <label for="tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" name="tarjeta" required>
+                <button type="submit" class="btn-realizar-compra">Realizar Compra</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 Sistema de Inventarios</p>
+    </footer>
+</body>
+</html>

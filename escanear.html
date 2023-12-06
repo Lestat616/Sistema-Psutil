@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sistema de Inventarios - Resultados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='escanear.css') }}">
+    <!-- Estilos CSS en un archivo separado -->
+</head>
+
+<body>
+    <div class="sidebar-left">
+        <h1 class="titulo">Resultados del Escaneo de la CPU</h1>
+        <!-- Contenido de la barra lateral izquierda -->
+    </div>
+    <div class="sidebar-right">
+        <form method="post" action="/volver">
+            <button type="submit" class="boton-volver">Volver</button>
+        </form>
+        <form method="post" action="/inventario">
+            <button type="submit" class="boton-inventario">Inventario</button>
+        </form>
+        <form method="get" action="/logout">
+            <button type="submit" class="boton-cerrar-sesion">Cerrar Sesion</button>
+        </form>
+    </div>
+    <div class="container-resultados">
+        <!-- Los resultados se muestran en una sección central -->
+        <p>Nombre del PC: {{ nombre_pc }}</p>
+        <p>Sistema Operativo: {{ sistema_operativo }}</p>
+        <p>Versión del Sistema Operativo: {{ version_sistema_operativo }}</p>
+        <p>Procesador: {{ procesador }}</p>
+        <p>Arquitectura del Procesador: {{ arquitectura_procesador }}</p>
+        <p>Procesadores Físicos: {{ procesadores_fisicos }}</p>
+        <p>Total de Procesadores: {{ total_procesadores }}</p>
+        <p>Frecuencia Base del Procesador: {{ frecuencia_base_procesador }} MHz</p>
+        <p>Uso Total de la CPU: {{ uso_total_cpu }}%</p>
+        <p>Memoria Total: {{ memoria_total }} GB</p>
+        <p>Memoria Disponible: {{ memoria_disponible }} GB</p>
+        <p>Memoria Usada: {{ memoria_usada }} GB</p>
+        <p>Porcentaje de Uso de Memoria: {{ porcentaje_uso_memoria }}%</p>
+        <p>Capacidad Total del Disco: {{ capacidad_disco_total }} GB</p>
+        <p>Partición del Disco: {{ particion_disco }}</p>
+        <p>Disco Usado: {{ disco_usado }} GB</p>
+        <p>Disco Disponible: {{ disco_disponible }} GB</p>
+        <p>Porcentaje de Uso del Disco: {{ porcentaje_uso_disco }}%</p>
+        <p>Dirección MAC: {{ direccion_mac }}</p>
+        <p>Dirección IP: {{ direccion_ip }}</p>
+
+    </div>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 Sistema de Inventarios</p>
+    </footer>
+</body>
+
+</html>

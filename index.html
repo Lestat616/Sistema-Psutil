@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sistema de Inventarios - Escanear</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1 class="navbar-title">Sistema de Inventarios</h1>
+            </div>
+            <div class="sidebar-right">
+                <form method="get" action="/logout">
+                    <button type="submit" class="navbar-button">Cerrar Sesión</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <form action="/escanear" method="post">
+            <button type="submit" class="scan-button">Escanear</button>
+        </form>
+        <div class="button-container">
+            <form method="post" action="/inventario">
+                <button type="submit" class="purchase-button">INVENTARIO</button>
+            </form>
+            <form action="/compra_productos" method="get">
+                <button type="submit" class="purchase-button">COMPRA PRODUCTOS</button>
+            </form>
+            <form action="{{ url_for('reporte_ventas') }}" method="get">
+                <button type="submit" class="reporte-ventas-button">REPORTE DE VENTAS</button>
+            </form>
+            <form action="/generar_informes" method="get">
+                <button type="submit" class="informes-button">GENERAR INFORMES</button>
+            </form>
+            <form action="/clientes_y_proveedores" method="get">
+                <button type="submit" class="informes-button">CLIENTES Y PROVEEDORES</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 Sistema de Inventarios</p>
+    </footer>
+</body>
+
+</html>

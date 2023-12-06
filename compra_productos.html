@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización y Compra de Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='compra_productos.css') }}">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1 class="navbar-title">Cotización y Compra de Productos</h1>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="product-list">
+            <h2>Productos Disponibles</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+                {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.id }}</td>
+                    <td>{{ producto.nombre }}</td>
+                    <td>${{ producto.precio }}</td>
+                    <td>
+                        <form method="post" action="{{ url_for('compra_productos') }}">
+                            <input type="hidden" name="producto_id" value="{{ producto.id }}">
+                            <button type="submit" class="btn-cotizar" name="accion" value="cotizar">Cotizar</button>
+                            <button type="submit" class="btn-comprar" name="accion" value="comprar">Comprar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2023 Sistema de Inventarios</p>
+    </footer>
+</body>
+</html>
